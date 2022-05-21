@@ -1,0 +1,7 @@
+Q14:
+Investigate the differences using Golang and Solidity languages. (5 points)
+Both Go and Solidity are languages used to develop Smart Contracts in Hyperledger Fabric (aka Chaincode) and Ethereum blockchain platforms, respectively.
+Solidity is tuned to interact with the Ethereum Virtual Machine (although we can interact with Ethereum Smart Contracts using Go, but not develop smart contracts).
+Go is primarily used in Hyperledger Fabric to develop Smart Contracts also called "Chaincode".
+Irrespective of platform, these languages are used to develop smart contracts. Smart contracts are business rules and logic implementations of any decentralized application. So, essentially Go and Solidity are not used to develop DApps themselves, but the rules for the DApps which we call smart contracts.
+

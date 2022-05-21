@@ -1,0 +1,3 @@
+Q2
+What’s the difference between Send and Call in Solidity? (3 points)
+the difference between the call() and send() methods has to do with the type of function they are calling and their effect. Solidity functions can be divided into two categories, Functions that alter the state of the contract and Functions that do not alter the state of the contract. we should use the call() method when do not want to change the state of the contract and we should use the send() method for the type of data that does change the state of the contract

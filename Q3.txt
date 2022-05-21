@@ -1,0 +1,17 @@
+Q3
+How many methods do we have to keep String type in Solidity? (Explain in detail) (2 points)
+There are three way in solidity that we can store our variable. Memory and calldata mean the variable will only exist for the transaction, storage will be saved forever. Memory is used for function parameters and function scoped variables, calldata is memory but immutable (and cheaper). Storage for state variables.
+Storage is the easiest to grasp — it is where all state variables are stored. Because state can be altered in a contract (for example, within a function), storage variables must be mutable. However, their location is persistent, and they are stored on the blockchain.
+State variables in storage are arranged in a compact way — if possible, multiple values will occupy the same storage slot. Besides the special cases of dynamically sized arrays and structs, other variables are packed together in blocks of 32 bytes.
+If these variables are less than 32 bytes, they will be combined to occupy the same slot. Otherwise, they will be pushed onto the next storage slot. The data is stored contiguously (ie, one after the other), starting from the 0 slot (to slots 1, 2, 3, etc), in order of their declaration in the contract.
+Dynamic arrays and structs always occupy a new slot, and any variables following them will also be initialized to start a new storage slot.
+Because the size of both dynamic arrays and structs are unknown a priori (ie until you assign them later in your contract) they cannot be stored with their data in between other state variables. Instead, they are assumed to take up 32 bytes, and the elements within them are stored starting at a separate storage slot that is computed using a Keccak-256 hash.
+However, constant state variables are not saved into a storage slot. Rather, they are injected directly into the contract bytecode — whenever those variables are read, the contract automatically switches them out for their assigned constant value.
+Memory is reserved for variables that are defined within the scope of a function. They only persist while a function is called, and thus are temporary variables that cannot be accessed outside this scope (ie anywhere else in your contract besides within that function). However, they are mutable within that function.
+Solidity reserves four 32-byte slots for memory, with specific byte ranges, consisting of: 1) 64-byte scratch space for hashing methods; 2) 32 bytes for currently allocated memory size, which is the free memory pointer where Solidity always places new objects; and 3) a 32-byte zero slot — which is used as the initial value for dynamic memory arrays and should never be written to.
+Because of these layout differences, there are situations for arrays and structs where they will occupy different amounts of space depending on being either in storage or memory.
+Calldata is an immutable, temporary location where function arguments are stored, and behaves mostly like memory.
+It is recommended to try to use calldata because it avoids unnecessary copies and ensures that the data is unaltered. Arrays and structs with calldata data location can also be returned from functions.
+This type of data is assumed to be in a format defined by the ABI specification, ie padded to multiples of 32 bytes (which differs from internal function calls). Arguments for constructors are slightly different, as they are directly appended to the end of the contract’s code
+
+

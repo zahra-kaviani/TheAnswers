@@ -1,0 +1,6 @@
+Q11:
+What’s Truffle? Explain the role of truffle in implementing dapps. (5 points)
+ruffle is a development environment, testing framework and deployment pipeline for Ethereum dapps — or any blockchain using the EVM. This section.
+Truffle is operated in the Terminal, and as such has a range of handy commands for us to use at different stages of developing a dapp.
+pps (Decentralized Applications) are applications that do not rely on traditional servers. Instead, dApps make use of Blockchain to host the data traditionally stored on the servers. The data is stored across the network of nodes connected to the Blockchain. Various tools and frameworks are used to write full-stack, decentralized applications. One such popular framework for writing dApps using the Solidity programming language is Truffle. Truffle provides a basic scaffolding to design dApp projects. Using Truffle, we can create the smart contracts required to create the blockchain functionality, write unit tests for the functions, and design the front-end design of the dApp. 
+

@@ -1,0 +1,12 @@
+Q12:
+What’s the difference between ERC20 and ERC721? (5 points)
+
+The basic difference you find in ERC20 vs. ERC721 comparisons would directly point to the fungibility of ERC-20 tokens. On the other hand, ERC-721 tokens are non-fungible. While ERC-20 tokens represent a single asset and are interchangeable, ERC-721 tokens are indivisible and represent a collection of assets.
+ERC20 tokens are also interchangeable and represent a single asset, whereas ERC721 represents a class of assets. Additionally, ERC721 is not dividable.
+A popular example of this is CryptoKitties. The purpose of the game is for users to breed, buy and sell virtual cats. When you play CryptoKitties, you fully own an asset in the form of this virtual cat – each of which are unique and cannot be shared with anyone else.
+The game quickly became a success – so much so that gaming on blockchain could become widely adopted in future. Read more about gaming on the blockchain here.
+As for ERC20 tokens, they are completely dividable. This means you can give 0.1 of your tokens to someone else.
+In terms of issues, ERC20 faces the challenge of tokens being lost when being transferred to other wallets or smart contracts that don’t support ERC20 tokens. However, ERC223 and ERC777 were created as a solution to this problem.
+ERC721’s main challenge is that transferring numerous assets can become expensive, hence why we have the ERC721 standard.
+There are several differences between the two, and each offer something unique to its users. While they don’t come without their challenges, they’re always striving for improvement.
+

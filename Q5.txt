@@ -16,7 +16,7 @@ contract ZombieFactory {
 
     function _createZombie(string memory _name, uint _dna) private {
         zombies.push(Zombie(_name, _dna));
-        // and fire it here
+        
     }
 
     function _generateRandomDna(string memory _str) private view returns (uint) {
@@ -30,3 +30,4 @@ contract ZombieFactory {
     }
 
 }
+//The DNA we need must be 16 digits long. So the second line of code should return the above value modulus (%) dnaModulus the make sure that the nuber is 16 digits
